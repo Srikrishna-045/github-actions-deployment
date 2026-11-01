@@ -1,0 +1,52 @@
+# ------------------------------------------------------------
+# deploy.yml - GitHub Actions workflow
+# Publishes the "site" folder to GitHub Pages automatically.
+# ------------------------------------------------------------
+name: Deploy website to GitHub Pages
+
+# WHEN does this workflow run?
+on:
+  push:
+    branches: ["main"]     # every push to the main branch
+  workflow_dispatch:       # also allows a manual "Run workflow" button
+
+# PERMISSIONS the workflow needs (least privilege = more secure)
+permissions:
+  contents: read      # read the repository files
+  pages: write        # publish to GitHub Pages
+  id-token: write     # prove to GitHub Pages that the deployment is genuine
+
+# CONCURRENCY: only one deployment at a time.
+# If a newer push arrives, the older waiting run is replaced.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # Link to the live website shown in the Actions summary
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # A free virtual machine provided by GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: download the repository code onto the virtual machine
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: prepare GitHub Pages settings
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Step 3: package only the "site" folder as a Pages artifact
+      - name: Upload site as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./site"
+
+      # Step 4: publish the artifact to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

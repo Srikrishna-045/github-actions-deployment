@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page settings -->
+  <meta charset="UTF-8">
+  <!-- This line makes the page fit mobile screens properly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner DevOps project that deploys a static website automatically using GitHub Actions and GitHub Pages.">
+  <title>Automated Website Deployment Using GitHub Actions</title>
+  <!-- Link to our CSS file (same folder, so no folder name is needed) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION BAR ========== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">Auto<span>Deploy</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== 1. HOME / HERO ========== -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1>Automated Website Deployment Using GitHub Actions</h1>
+        <p class="hero-text">
+          Push your code to GitHub and your website goes live on its own.
+          No manual uploads, no copying files, no waiting.
+        </p>
+        <a href="#how-it-works" class="btn btn-light">Get Started</a>
+      </div>
+    </section>
+
+    <!-- ========== 2. ABOUT PROJECT ========== -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About the Project</h2>
+        <p class="section-intro">
+          This project shows how a simple website can be published automatically every time the code changes.
+        </p>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>What is DevOps?</h3>
+            <p>DevOps is a way of working where developers and operations teams cooperate and use automation to build, test and release software quickly and reliably.</p>
+          </article>
+          <article class="card">
+            <h3>What is CI/CD?</h3>
+            <p>Continuous Integration (CI) checks every code change. Continuous Deployment (CD) publishes the change automatically. Together they form a pipeline from code to live website.</p>
+          </article>
+          <article class="card">
+            <h3>Why automate deployment?</h3>
+            <p>Manual deployment is slow and easy to get wrong. Automation repeats the same steps the same way every time, so releases are faster and safer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 3. TECHNOLOGIES USED ========== -->
+    <section id="technologies" class="section section-alt">
+      <div class="container">
+        <h2>Technologies Used</h2>
+        <p class="section-intro">Only simple, free tools are used in this project.</p>
+        <div class="grid grid-3">
+          <article class="card"><h3>HTML5</h3><p>Builds the structure and content of the web page.</p></article>
+          <article class="card"><h3>CSS3</h3><p>Controls colours, layout, spacing and the responsive design.</p></article>
+          <article class="card"><h3>Git</h3><p>Tracks every change made to the project files on your computer.</p></article>
+          <article class="card"><h3>GitHub</h3><p>Stores the project online and lets Git changes be shared.</p></article>
+          <article class="card"><h3>GitHub Actions</h3><p>Runs the automatic workflow that deploys the website.</p></article>
+          <article class="card"><h3>GitHub Pages</h3><p>Hosts the website and gives it a public web address.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. HOW IT WORKS ========== -->
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <h2>How It Works</h2>
+        <p class="section-intro">Six steps take a code change from your computer to the live website.</p>
+        <ol class="steps">
+          <li class="step"><span class="step-number">1</span><div><h3>Developer writes code</h3><p>The website files are edited in Visual Studio Code.</p></div></li>
+          <li class="step"><span class="step-number">2</span><div><h3>Code is committed using Git</h3><p>Git saves the changes as a commit with a short message.</p></div></li>
+          <li class="step"><span class="step-number">3</span><div><h3>Code is pushed to GitHub</h3><p>The commit is uploaded to the main branch of the repository.</p></div></li>
+          <li class="step"><span class="step-number">4</span><div><h3>GitHub Actions triggers automatically</h3><p>The push event starts the workflow without any manual action.</p></div></li>
+          <li class="step"><span class="step-number">5</span><div><h3>Deployment workflow executes</h3><p>The workflow checks out the code, packages the site folder and deploys it.</p></div></li>
+          <li class="step"><span class="step-number">6</span><div><h3>Website is published</h3><p>GitHub Pages serves the new version at a public URL.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== 5. PROJECT BENEFITS ========== -->
+    <section id="benefits" class="section section-alt">
+      <div class="container">
+        <h2>Project Benefits</h2>
+        <div class="grid grid-5">
+          <article class="card card-small"><h3>Less manual work</h3><p>No more uploading files by hand.</p></article>
+          <article class="card card-small"><h3>Faster deployment</h3><p>Changes go live within a minute or two.</p></article>
+          <article class="card card-small"><h3>Consistency</h3><p>The same steps run every time.</p></article>
+          <article class="card card-small"><h3>Automatic updates</h3><p>Every push updates the live site.</p></article>
+          <article class="card card-small"><h3>Easy version control</h3><p>Every change is recorded and can be undone.</p></article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 6. FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p><strong>Automated Website Deployment Using GitHub Actions</strong></p>
+      <p>DevOps Internship Project – 2026</p>
+      <!-- IMPORTANT: replace YOUR-USERNAME with your real GitHub username -->
+      <p><a href="https://github.com/Srikrishna-045/github-actions-deployment">GitHub Repository</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

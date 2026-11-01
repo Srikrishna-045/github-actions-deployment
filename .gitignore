@@ -1,0 +1,15 @@
+# Files Git should NOT track
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+*.code-workspace
+
+# Temporary and log files
+*.log
+*.tmp
+*.bak

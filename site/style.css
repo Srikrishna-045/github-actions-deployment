@@ -1,0 +1,130 @@
+/* ==========================================================
+   style.css - styling for the Automated Deployment website
+   Colour scheme: blue and white
+   ========================================================== */
+
+/* ---------- 1. Colour and size settings (CSS variables) ----------
+   Change a colour here and it changes everywhere on the page. */
+:root {
+  --blue-900: #0b2a5b;   /* darkest blue: headings, footer */
+  --blue-700: #1250b0;   /* main brand blue: buttons, links */
+  --blue-500: #2f7de1;   /* lighter blue: accents */
+  --blue-50:  #eef4fd;   /* very light blue: alternate sections */
+  --white:    #ffffff;
+  --text:     #1f2d3d;   /* normal body text */
+  --muted:    #55657a;   /* softer text */
+  --radius:   10px;
+}
+
+/* ---------- 2. Basic reset ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+}
+
+a { color: var(--blue-700); }
+ul, ol { list-style: none; }
+
+/* Keeps content centred and not too wide */
+.container { width: 92%; max-width: 1100px; margin: 0 auto; }
+
+/* ---------- 3. Navigation bar ---------- */
+.navbar {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid #dbe5f3;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px; padding: 12px 0;
+}
+.brand { font-size: 1.35rem; font-weight: 700; color: var(--blue-900); text-decoration: none; }
+.brand span { color: var(--blue-500); }
+.nav-links { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav-links a {
+  display: block; padding: 8px 14px; border-radius: 6px;
+  color: var(--blue-900); text-decoration: none; font-weight: 500;
+}
+.nav-links a:hover { background: var(--blue-50); color: var(--blue-700); }  /* hover effect */
+
+/* ---------- 4. Hero section ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+  color: var(--white);
+  padding: 96px 0;
+}
+.hero-inner { max-width: 760px; }
+.hero h1 { font-size: 2.6rem; line-height: 1.2; margin-bottom: 18px; }
+.hero-text { font-size: 1.2rem; margin-bottom: 30px; color: #dce8fb; max-width: 56ch; }
+
+/* ---------- 5. Buttons ---------- */
+.btn {
+  display: inline-block; padding: 13px 28px; border-radius: 8px;
+  font-weight: 600; text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-light { background: var(--white); color: var(--blue-700); }
+.btn-light:hover { background: var(--blue-50); color: var(--blue-900); }
+
+/* ---------- 6. Sections ---------- */
+.section { padding: 72px 0; }
+.section-alt { background: var(--blue-50); }
+.section h2 { font-size: 2rem; color: var(--blue-900); margin-bottom: 10px; }
+.section-intro { color: var(--muted); margin-bottom: 36px; max-width: 62ch; }
+
+/* ---------- 7. Grid layout and cards ---------- */
+.grid { display: grid; gap: 22px; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid-5 { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+
+.card {
+  background: var(--white);
+  border: 1px solid #dbe5f3;
+  border-top: 4px solid var(--blue-500);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.card:hover { box-shadow: 0 6px 18px rgba(18, 80, 176, 0.15); border-top-color: var(--blue-700); }
+.card h3 { color: var(--blue-900); font-size: 1.15rem; margin-bottom: 8px; }
+.card p { color: var(--muted); }
+.card-small { padding: 20px; }
+
+/* ---------- 8. How It Works steps (a real sequence, so numbered) ---------- */
+.steps { display: grid; gap: 16px; max-width: 760px; }
+.step {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--white); border: 1px solid #dbe5f3;
+  border-radius: var(--radius); padding: 18px 22px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.step:hover { border-color: var(--blue-500); background: var(--blue-50); }
+.step-number {
+  flex: 0 0 38px; height: 38px; border-radius: 50%;
+  background: var(--blue-700); color: var(--white);
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+}
+.step h3 { color: var(--blue-900); font-size: 1.1rem; }
+.step p { color: var(--muted); }
+
+/* ---------- 9. Footer ---------- */
+.footer { background: var(--blue-900); color: #dce8fb; padding: 36px 0; text-align: center; }
+.footer p { margin: 4px 0; }
+.footer a { color: var(--white); }
+.footer a:hover { color: #9cc4ff; }
+
+/* ---------- 10. Mobile screens ---------- */
+@media (max-width: 640px) {
+  .hero { padding: 64px 0; }
+  .hero h1 { font-size: 1.9rem; }
+  .section { padding: 52px 0; }
+  .section h2 { font-size: 1.6rem; }
+  .nav-inner { justify-content: center; }
+  .nav-links { justify-content: center; }
+}
